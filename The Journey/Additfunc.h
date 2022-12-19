@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <thread>
 bool Played = false;
+bool Escape = false;
 void Print(std::string Message) {
 
 	std::cout << Message << std::endl;
@@ -47,17 +48,23 @@ void TextprintoutAD(std::string text, int Char, double Speed) {
 	std::cout << std::endl;
 	
 }
-void Music() {
-	int z = 5;
+void PlayMusic() {
+	bool Exit = false;
+	Sleep(1000);
 	if (!Played) {
 		Played = true;
 		do {
+			Exit = Escape;
 			PlaySoundA("Music.wav", NULL, SND_SYNC);
-		} while (z == 5);
+		} while (!Exit);
 		
 	}
 	else {
 
 
 	}
+}
+void StopMusic() {
+
+
 }

@@ -14,6 +14,21 @@ std::thread thread_obj(Music);
 bool New_person = true;
 std::string speedA = "Medium";
 std::string soundA = "Unavailable";
+class Player {
+public:
+	int Skill;
+	int power;
+	bool Healthy;
+	int health;
+	Player(int Askill, int Apower, bool AHealthy, int Ahealth) {
+
+		Skill = Askill;
+		power = Apower;
+		Healthy = AHealthy;
+		health = Ahealth;
+	}
+};
+Player Player1(1, 2, true, 20);
 void Option() {
 	int Value;
 	std::cout << "General:\n\nText speed: " << speedA << " \nSound: " << soundA << " \n\nMore options soon coming!" << std::endl;
@@ -37,7 +52,7 @@ void Option() {
 
 
 	
-
+	
 
 
 
@@ -121,9 +136,11 @@ void New_game() {
 
 
 void Credits() {
-
+	std::string None;
+	std::string Credits = "		The Journey!\n	Made by Ray\n	Concept from The Oregon Trail\n";
+	Print(Credits);
+	std::cin >> None;
 	
-
 }
 
 
@@ -133,7 +150,7 @@ void Menu() {
 	std::string list = "1.New game\n2.Continue Game\n3.Option\n4.Credits\n5.Exit";
 	int Chosen = 0;
 	if (New_person) {
-		TextprintoutAD(Icon, Icon.length(), 1);
+		Print(Icon);
 		Print("\n\n\n");
 		Textprintout(list, list.length());
 		New_person = false;
@@ -175,6 +192,15 @@ void Menu() {
 		case 5:
 			Clear();
 			std::cout << "See ya later" << std::endl;
+			Sleep(1000);
+			for (bool j = false; j; Print("Attempted to exit")) {
+				bool Firsttime;
+				if (Firsttime) { Print("Please wait while we close all processes"); Print("Don't worry if it takes time"); }
+				Escape = false;
+				sndPlaySoundA()
+
+			}
+			exit(EXIT_SUCCESS);
 			break;
 
 		default:
@@ -190,7 +216,7 @@ void Menu() {
 
 
 int main() {
-	printf("test", ERROR);
+	
 	bool test = false;
 	bool testing = false;
 	do {
